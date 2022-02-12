@@ -9,7 +9,7 @@ edition = "2018"
 [build-dependencies]
 anyhow = "1.0.45"
 cc = "1.0.72"
-torch-build = { version = "0.1.0", git = "https://github.com/jerry73204/tch-rs.git", rev = "f579eec169038a71a88068b9976d6bd2723d0d4b" }
+torch-build = "0.1.0"
 
 [dependencies]
 libc = "0.2.107"
