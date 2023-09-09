@@ -7,16 +7,19 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
-anyhow = "1.0.56"
-cc = "1.0.73"
+anyhow = "1.0.75"
+cc = "1.0.83"
 torch-build = "0.1.0"
 
 [dependencies]
-libc = "0.2.121"
+libc = "0.2.147"
 static_assertions = "1.1.0"
-tch = "0.7.0"
-torch-sys = "0.7.0"
+tch = "0.13.0"
+torch-sys = "0.13.0"
 
 [features]
 default = ["parallel-build"]
 parallel-build = ["torch-build/parallel-build"]
+
+[patch.crates-io]
+torch-build = { git = "https://github.com/jerry73204/torch-build.git", rev = "be0a151393e6880c43a7daa0faa914169a727251" }
