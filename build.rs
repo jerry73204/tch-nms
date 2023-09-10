@@ -11,25 +11,19 @@ fn main() -> Result<()> {
 
     // compile nms_cpu.cpp
     {
-        let mut build = cc::Build::new();
         let mut cpp_ext = CppExtension::new();
         cpp_ext
             .use_cuda_api(true)
             .link_python(true)
             .source(CPP_SOURCE);
-        cpp_ext.configure(&mut build)?;
-        build.try_compile("nms_cpu")?;
-        cpp_ext.link()?;
+        cpp_ext.build("nms_cpu")?;
     }
 
     // compile nms_cuda.cu
     {
-        let mut build = cc::Build::new();
         let mut cuda_ext = CudaExtension::new();
         cuda_ext.link_python(false).source(CUDA_SOURCE);
-        cuda_ext.configure(&mut build)?;
-        build.try_compile("nms_cuda")?;
-        cuda_ext.link()?;
+        cuda_ext.build("nms_cuda")?;
     }
 
     Ok(())

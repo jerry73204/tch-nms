@@ -21,5 +21,6 @@ torch-sys = "0.13.0"
 default = ["parallel-build"]
 parallel-build = ["torch-build/parallel-build"]
 
-[patch.crates-io]
-torch-build = { git = "https://github.com/jerry73204/torch-build.git", rev = "be0a151393e6880c43a7daa0faa914169a727251" }
+[patch.crates-io.torch-build]
+git = "https://github.com/jerry73204/torch-build.git"
+rev = "72c489928ca79231d22fc932786101ccc4bb45e9"
