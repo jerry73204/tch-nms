@@ -168,7 +168,7 @@ mod tests {
         let keep = nms_by_scores(&boxes, &scores, &groups, 0.50).unwrap();
         assert!(keep.size1().unwrap() <= N_BOXES);
 
-        let keep = Vec::<i64>::from(&keep);
+        let keep: Vec<i64> = keep.try_into()?;
         assert!(keep.iter().all(|&val| val < N_BOXES));
     }
 
